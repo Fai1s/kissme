@@ -1,0 +1,54 @@
+/* Board.css */
+
+
+.board {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.center-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Центрируем по вертикали */
+}
+
+.players-circle {
+  position: relative;
+  width: 50vmin; /* Радиус круга игроков */
+  height: 50vmin; /* Высота круга игроков */
+  border-radius: 50%; /* Делаем круг */
+  display: flex; /* Используем flexbox для размещения игроков */
+  justify-content: center; /* Центрируем игроков внутри круга */
+  align-items: center; /* Центрируем игроков внутри круга */
+  /* Позиционируем круг в центре */
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрируем круг */
+}
+
+.bottle-container {
+  position: absolute;
+  top: 50%; /* Центрируем бутылку по вертикали */
+  left: 50%; /* Центрируем бутылку по горизонтали */
+  transform: translate(-50%, -50%); /* Центрируем элемент */
+  width: 15vmin; /* Уменьшаем размер контейнера для бутылки */
+  height: 15vmin; /* Уменьшаем размер контейнера для бутылки */
+  z-index: 10; /* Бутылка должна быть поверх игроков */
+}
+
+.bottle {
+  width: 10vmin; /* Уменьшим размер до 10vmin */
+  height: auto; /* Оставляем автоматическую высоту для сохранения пропорций */
+  cursor: pointer;
+  transform-origin: center; /* Центр вращения — центр изображения */
+  z-index: 10; /* Оставляем бутылку выше игроков */
+}
