@@ -2,21 +2,17 @@ import React from 'react';
 import '../styles/Player.css';
 
 const Player = ({ player, isActive, isSelected, index }) => {
-  const totalPlayers = 10; // Общее количество игроков
-  const radius = 20; // Радиус круга в vmin (можно корректировать для внешнего вида)
-  
-  // Вычисление угла для каждого игрока в радианах
+  const totalPlayers = 10;
+  const radius = 20;
   const angle = (2 * Math.PI / totalPlayers) * index;
-
-  // Вычисление позиции игрока по координатам X и Y
   const x = Math.cos(angle) * radius;
   const y = Math.sin(angle) * radius;
 
   const positionStyle = {
     position: 'absolute',
-    left: `calc(50% + ${x}vmin)`, // Смещение влево
-    top: `calc(50% + ${y}vmin)`,  // Смещение вверх
-    transform: 'translate(-50%, -50%)', // Центрирование аватарки
+    left: `calc(50% + ${x}vmin)`,
+    top: `calc(50% + ${y}vmin)`,
+    transform: 'translate(-50%, -50%)',
   };
 
   return (

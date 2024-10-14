@@ -1,6 +1,3 @@
-// Bottle.jsx
-
-
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { Howl } from 'howler';
@@ -26,8 +23,7 @@ const Bottle = ({ onSpinEnd, activePlayer, players }) => {
       autoplay: true,
     });
 
-    // Увеличиваем минимальную скорость вращения
-    const randomAngle = Math.floor(Math.random() * 360) + 1080; // Минимум три оборота
+    const randomAngle = Math.floor(Math.random() * 360) + 1080;
     const newAngle = angle + randomAngle;
 
     api.start({
@@ -41,14 +37,11 @@ const Bottle = ({ onSpinEnd, activePlayer, players }) => {
         const adjustedAngle = (newAngle % 360 + degreesPerPlayer / 2) % 360; 
         let playerIndex = Math.floor(adjustedAngle / degreesPerPlayer); 
 
-        let newActivePlayer = playerIndex - 2; // Предыдущий активный
+        let newActivePlayer = playerIndex - 2;
 
-        // Убедимся, что новый активный игрок не совпадает с текущим
         if (newActivePlayer === activePlayer) {
-          // Если совпадает, повторяем вращение
-          spin(); // Повторный вызов функции spin
+          spin();
         } else {
-          // Если индекс меньше нуля, исправляем его
           newActivePlayer = (newActivePlayer + totalPlayers) % totalPlayers;
 
           console.log('New Player Index:', playerIndex);
@@ -63,13 +56,13 @@ const Bottle = ({ onSpinEnd, activePlayer, players }) => {
 
 
   return (
-<animated.div
-  className="bottle"
-  style={springs}
-  onClick={spin}
->
-  <img src={require('../assets/Bottle.png')} alt="Bottle" style={{ width: '70%', height: 'auto' }} /> 
-</animated.div>
+    <animated.div
+      className="bottle"
+      style={springs}
+      onClick={spin}
+    >
+      <img src={require('../assets/Bottle.png')} alt="Bottle" style={{ width: '70%', height: 'auto' }} /> 
+    </animated.div>
   );
 };
 

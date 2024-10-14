@@ -1,5 +1,3 @@
-// Board.jsx
-
 import React, { useState } from 'react';
 import Player from './Player';
 import Bottle from './Bottle';
@@ -49,10 +47,10 @@ const Board = () => {
           ))}
         </div>
         <Bottle
-  onSpinEnd={handleSpinEnd}
-  activePlayer={activePlayer}
-  players={players} // Передаем массив игроков
-/>
+          onSpinEnd={handleSpinEnd}
+          activePlayer={activePlayer}
+          players={players}
+        />
       </div>
       <Counter count={kissCount} />
     </div>
